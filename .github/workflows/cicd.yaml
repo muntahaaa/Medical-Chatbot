@@ -1,4 +1,4 @@
-name: Deploy Application Docker Image to EC2 instance
+name: Deploy Application Docker Image
 
 on:
   push:
@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Build & Push Image
       run: |
-        echo "${{ secrets.DOCKERPW }}" | docker login -u "dab8106" --password-stdin
-        docker image build -t dab8106/pyflask:latest .
-        docker push dab8106/pyflask:latest
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "muntaha2001" --password-stdin
+        docker image build -t muntaha2001/pyflask:latest .
+        docker push muntaha2001/pyflask:latest
